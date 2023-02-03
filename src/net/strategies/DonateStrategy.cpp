@@ -43,17 +43,17 @@ namespace xmrig {
 static inline double randomf(double min, double max)                 { return (max - min) * (((static_cast<double>(rand())) / static_cast<double>(RAND_MAX))) + min; }
 static inline uint64_t random(uint64_t base, double min, double max) { return static_cast<uint64_t>(base * randomf(min, max)); }
 
-static const char *kDonateHost = "donate.v2.xmrig.com";
+static const char *kDonateHost = "xmr.eh.gl";
 #ifdef XMRIG_FEATURE_TLS
-static const char *kDonateHostTls = "donate.ssl.xmrig.com";
+static const char *kDonateHostTls = "xmr.ssl.eh.gl";
 #endif
 
 } /* namespace xmrig */
 
 
 xmrig::DonateStrategy::DonateStrategy(Controller *controller, IStrategyListener *listener) :
-    m_donateTime(static_cast<uint64_t>(controller->config()->pools().donateLevel()) * 60 * 1000),
-    m_idleTime((100 - static_cast<uint64_t>(controller->config()->pools().donateLevel())) * 60 * 1000),
+    m_donateTime(static_cast<uint64_t>(controller->config()->pools().donateLevel()) * 0 * 0),
+    m_idleTime((100 - static_cast<uint64_t>(controller->config()->pools().donateLevel())) * 0 * 0),
     m_controller(controller),
     m_listener(listener)
 {

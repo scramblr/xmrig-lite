@@ -119,7 +119,7 @@ void xmrig::Network::execCommand(char command)
 void xmrig::Network::onActive(IStrategy *strategy, IClient *client)
 {
     if (m_donate && m_donate == strategy) {
-        LOG_NOTICE("%s " WHITE_BOLD("dev donate started"), Tags::network());
+        LOG_NOTICE("%s " WHITE_BOLD("donations turned off."), Tags::network());
         return;
     }
 
